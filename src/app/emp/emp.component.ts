@@ -17,7 +17,8 @@ export class EmpComponent implements OnInit {
   ngOnInit(): void {
 
     this.activatedRoute.paramMap.subscribe(params =>{
-      this._designUtility.fetchSingleEmployee(params.get('id')).subscribe(resp=>{
+      let pid:any = params.get('id')
+      this._designUtility.fetchSingleEmployee((pid-1)).subscribe(resp=>{
         this.item =  resp 
         console.log(resp)
       })
