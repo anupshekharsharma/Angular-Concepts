@@ -8,14 +8,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-
     this.activatedRoute.fragment.subscribe(res=>{
       console.log(res)
       this.JumpTo(res);
     })
+     
   }
 
   JumpTo(section){

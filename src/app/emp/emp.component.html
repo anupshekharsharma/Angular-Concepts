@@ -4,13 +4,13 @@
             <h2>Employee Detail</h2>
             <hr>
 
-            <div class="row justify-content-center" *ngIf="item">
+            <div class="row justify-content-center">
                 <div class="col-md-8 card shadow px-3 py-3"> 
-                    <div class="item">
-                        <button type="button" 
-                        [routerLink]="['/employee', item.id - 1]" 
-                        [queryParams]="{editMode: true}" 
-    
+                    <div class="item"  *ngIf="item">
+                        <button type="button"
+
+                        [routerLink]="['/employee', item.id]"
+                        [queryParams]="{editMode : true}"
                         class="btn edit">
                             <i class="fa fa-pencil btn-sm"></i> 
                         </button>
@@ -21,31 +21,31 @@
                             <div class="form-group">
                                 <label for="">Name</label>
                                 <span class="value" *ngIf="!editMode">{{item.name}}</span>
-                                <input type="text" [value]="item.name" *ngIf="editMode" class="form-control">
+                                <input type="text" value="{{item.name}}" *ngIf="editMode" class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <label for="">Designation</label>
                                 <span class="value" *ngIf="!editMode">{{item.designation}}</span>
-                                <input type="text" [value]="item.designation" *ngIf="editMode" class="form-control">
+                                <input type="text" value="{{item.designation}}" *ngIf="editMode" class="form-control">
                             </div> 
 
                             <div class="form-group">
                                 <label for="">Department</label>
                                 <span class="value" *ngIf="!editMode">{{item.dept}}</span>
-                                <input type="text" [value]="item.dept" *ngIf="editMode" class="form-control">
+                                <input type="text" value="{{item.dept}}" *ngIf="editMode" class="form-control">
                             </div>  
 
                             <div class="form-group">
                                 <label for="">Status</label>
                                 <span class="value" *ngIf="!editMode">{{item.status}}</span>
-                                <input type="text" [value]="item.status" *ngIf="editMode" class="form-control">
+                                <input type="text" value="{{item.status}}" *ngIf="editMode" class="form-control">
                             </div>
                         </div>
                         <div class="btn-row text-center pt-2" *ngIf="editMode">
                             <button type="submit" class="btn btn-success mr-2">Save Details</button>
                             <button type="button" class="btn btn-outline-secondary"
-                            [routerLink]="['/employee', item.id - 1]" 
+                            [routerLink]="['/employee', item.id]"
                             >Discard</button>
                         </div>
                         <div class="details mt-2" *ngIf="!editMode">
