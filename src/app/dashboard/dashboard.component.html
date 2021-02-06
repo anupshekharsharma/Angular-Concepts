@@ -3,7 +3,8 @@
         <div class="row">
             <div class="col"><h2>Dashboard</h2></div>
             <div class="col ml-auto text-right">
-                <button type="button" (click)="onAddEmployee()" class="btn btn-outline-success"><i class="fa fa-plus"></i> Add Employee</button></div>
+                
+            </div>
         </div>
         
         
@@ -39,7 +40,7 @@
                 <div class="details" [class.mt-2]="!listViewActive">
                     
                     <a [routerLink]="['/employee', item.id]" class="btn btn-outline-success btn-sm">View Employee</a>
-                    <button class="btn btn-outline-danger btn-sm ml-2" (click)="onDeleteEmployee(item.userId)"><i class="fa fa-remove"></i></button>
+                    
                 </div>
             </div>
         </div>
